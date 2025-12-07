@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Pixelify Sans" , sans-serif;
+    font-weight: 600;
+}
+
+body{
+    background-image: url(BackgroundImgs/2/2304x1296.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.heading{
+    /* width: 150px;
+    height: 50px;
+    font-weight: 900;
+    font-size: 30px;
+    text-align: center; */
+
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    z-index: 1000; /* Ensures it stays above other elements */                                                                                                                                              
+    font-size: 50px;
+    color: whitesmoke;
+}
+
+.wrapper {
+    padding: 100px;
+    width: 500px;
+    position: absolute;
+    left: 34.5%;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 150px; 
+    color: whitesmoke;
+}
+
+  .roles {
+    font-size: 20px;
+    height: 50px;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.roles div {
+    height: 50px;
+    transition: margin-top 1s ease-in-out;
+    font-weight: 600;
+    font-size: 23px;
+}
+
+.cv-container {
+    position: fixed;
+    bottom: 50px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.cv-folder {
+    width: 80px; /* Adjust size */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cv-folder:hover {
+    transform: scale(1.1);
+}
+
+.cv-text {
+    margin-left: 10px;
+    font-size: 20px;
+    color: whitesmoke;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.cv-container:hover .cv-text {
+    color: #f97a30; /* Changes text color on hover */
+}
+
+/* Star wars text */
+
+.perspective { 
+    text-transform: uppercase;
+    overflow: hidden; /*this hides the content once it passes out of the div */
+    margin-top: 15%;
+    /* -webkit-perspective: 500px; /* Chrome, Safari,
+    Opera  */
+    perspective: 500px;
+    /* border: 1px solid red;  */
+    height:200px;
+  }
+  .crawl { 
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-bottom: 10%;
+    -webkit-transform: rotateX(45deg);
+    transform: rotateX(45deg);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: transform 60s linear; /* Smooth scrolling */
+  }
+
+  p{
+    font-size: 2em;
+    /* -webkit-transform: rotateX(-45deg);*/
+    /* Chrome, Safari, Opera  */
+    /* transform: rotateX(-45deg); */
+  }
+  
+  body{
+  /* background-color:black; */
+  color:whitesmoke;
+  
+  }

@@ -1,0 +1,105 @@
+:root{
+    --pixel-size:8;
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Pixelify Sans" , sans-serif;
+    font-weight: 600;
+    box-sizing: inherit;
+}
+
+body{
+    background-image: url(BackgroundImgs/3/2304x1296.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+h1{
+    color: whitesmoke;
+    font-size: 50px;
+}
+
+.screentitle{
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+
+
+/* .bumper {
+    text-align: center;
+    padding: 128px 16px;
+    background-color: #efefef;
+} */
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.space-holder {
+    position: relative;
+    width: 100%;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.horizontal {
+    position: absolute;
+    height: 100%;
+    will-change: transform;
+}
+
+.cards {
+    position: relative;
+    height: 100%;
+    padding: 0 0 0 150px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sample-card {
+    position: relative;
+    height: 300px;
+    width: 500px;
+    background-color: #111f30;
+    margin-right: 75px;
+    flex-shrink: 0;
+    color: /*rgb(63, 222, 52); */ #d1e5ff;
+
+    /* Center text horizontally and vertically */
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    /* align-items: center; Centers vertically */
+
+    /* Ensures text wraps within the box */
+    text-align: justify;
+    text-justify: inter-word; /* Distributes words evenly */
+    
+    /* Prevents single words from stretching awkwardly */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    
+    /* Ensures multiple lines are evenly distributed */
+    text-align-last: center;
+}

@@ -1,0 +1,174 @@
+:root{
+    --pixel-size:8;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Pixelify Sans" , sans-serif;
+    font-weight: 600;
+}
+
+body{
+ background-image: url(BackgroundImgs/5/2304x1296.png);
+ background-repeat: no-repeat;
+ background-position: center;
+ background-attachment: fixed;
+ background-size: cover;
+ display: flex;
+ /* justify-content: center;
+ align-items: center; */
+ cursor: none;
+}
+
+#main-menu .nav-bar { 
+    list-style:none;
+    width: 450px; 
+    margin-top: 40px; 
+    margin-left: 540px;
+}
+
+#main-menu .nav-bar li { 
+    display:inline; 
+    padding:0 10px; 
+}
+
+#main-menu .nav-bar li a {
+  text-decoration: none;
+  padding-left: 25px;
+  text-transform: uppercase;
+  color: whitesmoke;
+    text-shadow: 1px 1px 1px #ccc;
+}
+
+#main-menu .nav-bar li a:hover {
+    color: #413a3e;
+    font-weight: 800;
+  }
+
+#note {
+    position: absolute;
+    text-decoration: none;
+    padding-left: 0px;
+    text-transform: uppercase;
+    color: whitesmoke;
+    text-shadow: 1px 1px 1px #000000;
+    left: 0;
+    display: block;
+    right: 0;
+    bottom: 400px;
+    margin: auto;
+    text-align: center;
+    user-select: none;
+  }
+  
+.envir{
+    width: 1500px;
+    height: calc(32px * var(--pixel-size));
+    margin-top: 450px;
+   /* border: 3px solid whitesmoke; */
+}
+
+.Character{
+    position: absolute; /* Enable movement */
+    left: 0; /* Starting position */
+    top: 450px; /* Match the environment height */
+    width: calc(32px * var(--pixel-size));
+    height: calc(32px * var(--pixel-size));
+    /* background: whitesmoke; */
+    overflow: hidden;
+}
+
+.Character_Spritesheet{
+    animation: moveSpritesheet 1s steps(4) infinite;
+    width: calc(128px * var(--pixel-size));
+}
+
+.ANI{
+    animation: moveCharacter 12s linear infinite;
+}
+
+.walk{
+    animation: moveSpritesheet 1s steps(6) infinite;
+    width: calc(192px * var(--pixel-size));
+}
+
+.jump{
+    animation: moveSpritesheet 1s steps(8) infinite;
+    width: calc(256px * var(--pixel-size));
+}
+
+.idle{
+    animation: moveSpritesheet 1s steps(4) infinite;
+    width: calc(128px * var(--pixel-size));
+}
+
+.hurt{
+    animation: moveSpritesheet 1s steps(4) infinite;
+    width: calc(128px * var(--pixel-size));
+}
+
+.death{
+    animation: moveSpritesheet 1s steps(8) infinite;
+    width: calc(256px * var(--pixel-size));
+}
+
+.pixelart{
+    image-rendering: pixelated;
+}
+
+.cursor{
+    z-index: 999;
+    position: fixed;
+    background: #2696E8;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 20px #2696E8,
+                0 0 60px #2696E8,
+                0 0 100px #2696E8;
+
+    animation: colors 5s infinite;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.cursor:before{
+    content: '';
+    position: relative;
+    background: #2696E8;
+    width: 50px;
+    height: 50px;
+    opacity: 0.2;
+    transform: translate(-30%, -30%);
+    border-radius: 50%;
+}
+
+@keyframes moveSpritesheet{
+    0%{
+        transform: translate3d(0px, 0, 0)
+    }
+    100%{
+        transform: translate3d(-100%,0,0);
+    }
+}
+
+@keyframes moveCharacter{
+    0%{
+        transform: translate(0px, 0px);
+    }
+    100%{
+        transform: translate(1425px, 0px);
+    }
+}
+
+@keyframes colors{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}

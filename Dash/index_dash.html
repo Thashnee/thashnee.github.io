@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timo's Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Sixtyfour&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<nav id="main-menu">
+    <ul class="nav-bar">
+         <li class="nav-button-home"><a href="../Dash/index_dash.html">Home</a></li>
+         <li class="nav-button-about"><a href="../About/index_about.html">About</a></li>
+         <li class="nav-button-portfolio"><a href="../Portfolio/index_port.html">Portfolio</a></li>
+         <li class="nav-button-contact"><a href="../Contact/index_cont.html">Contact</a></li>
+    </ul>
+</nav>
+
+<span id="note">Press Arrow keys to control the owl<br> Press Space to idle</span>
+
+<div class="envir">
+    <div class="Character">
+        <img class="Character_Spritesheet pixelart" src="Sprites/2 Owlet_Monster/Owlet_Monster_Idle_4.png" alt="Character"/>
+    </div>  
+</div> 
+    <div class="cursor"></div>
+
+    <script type="text/javascript">
+        const cursor =document.querySelector(".cursor");
+        const character = document.querySelector(".Character_Spritesheet");
+        const chardiv = document.querySelector(".Character");
+        var timeout;
+
+        //follow cursor on mousemove
+        document.addEventListener("mousemove", (e) => {
+            let x = e.pageX
+            let y = e.pageY
+
+            cursor.style.top = y + "px";
+            cursor.style.left = x + "px";
+            cursor.style.display = "block";
+
+            //cursor effects on mouse stopped
+            function mouseStopped(){
+                cursor.style.display = "none"
+            }
+            clearTimeout(timeout);
+            timeout = setTimeout(mouseStopped, 1000);
+        });
+
+        //cursor effects on mouseout
+        document.addEventListener("mouseout", () => {
+            cursor.style.display = "none";
+        });
+
+        // Function to change the animation
+        document.addEventListener("keydown", (e) => {
+            const note = document.getElementById('note');
+            if (note) {
+                note.remove(); // Removes the element from the DOM
+            }
+            switch (e.key ) {
+                case "ArrowRight":
+                    character.src = "Sprites/2 Owlet_Monster/Owlet_Monster_Walk_6.png";
+                    character.className = "Character_Spritesheet pixelart walk";
+                    chardiv.className = "Character ANI";
+                    break;
+                case "ArrowUp":
+                    character.src = "Sprites/2 Owlet_Monster/Owlet_Monster_Jump_8.png";
+                    character.className = "Character_Spritesheet pixelart jump";
+                    chardiv.className = "Character ANI";
+                    break;
+                case "ArrowDown":
+                    character.src = "Sprites/2 Owlet_Monster/Owlet_Monster_Hurt_4.png";
+                    character.className = "Character_Spritesheet pixelart hurt";
+                    chardiv.className = "Character";
+                    break;
+                case "ArrowLeft":
+                    character.src = "Sprites/2 Owlet_Monster/Owlet_Monster_Death_8.png";
+                    character.className = "Character_Spritesheet pixelart death";
+                    chardiv.className = "Character";
+                    break;
+                default:
+                    console.log("Unknown action");
+                    character.src = "Sprites/2 Owlet_Monster/Owlet_Monster_Idle_4.png";
+                    character.className = "Character_Spritesheet pixelart idle";
+                    chardiv.className = "Character";
+
+            }
+           
+        });
+    </script>
+</body>
+</html>
